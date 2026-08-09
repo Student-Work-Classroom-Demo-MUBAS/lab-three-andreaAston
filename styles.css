@@ -15,3 +15,20 @@ p#hero{
     color:blueviolet;
 }
   
+/* !important — nuclear option, avoid it */ 
+/*p { color: purple !important; }  /* beats everything */ 
+
+
+/*Task 2 Combinators*/
+
+nav a {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+h2 ~ p {
+    color: green;
+    font-style: italic;
+    font-size: 2em;
+}
