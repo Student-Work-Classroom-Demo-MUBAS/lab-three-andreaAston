@@ -1,72 +1,79 @@
 
-/*  Task 1 Specificity*/
-/* Specificity: 0-0-1 (one element) */ 
-p { color: black; } 
+body { margin: 0; display: flex; justify-content: center; align-items: center; 
+min-height: 100vh; background: #888; } 
   
-/* Specificity: 0-1-0 (one class) */ 
-.intro { color: blue; } 
-  
-/* Specificity: 1-0-0 (one ID) — always beats classes */ 
-#hero { color: red; } 
-  
-/* Specificity: 0-1-1 (one class + one element) */ 
-p.intro { color: green; } 
-p#hero{
-    color:blueviolet;
-}
-  
-/* !important — nuclear option, avoid it */ 
-/*p { color: purple !important; }  /* beats everything */ 
-
-
-/*Task 2 Combinators*/
-
-nav a {
-    color: red;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-h2 ~ p {
-    color: green;
-    font-style: italic;
-    font-size: 2em;
-}
-
-.card{
-    position: relative;
-}
-
-.badge{
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-/* ALWAYS add this at the top of every CSS file */ 
-/* Makes padding and border INCLUDED in the element's width */ 
-*, *::before, *::after { 
-  box-sizing: border-box; 
+.flag { 
+  width: 600px; 
+  height: 400px;    /* 3:2 aspect ratio */ 
+  overflow: hidden; 
 } 
   
-.box-demo { 
-
-    /*task for the box model*/
-  /* CONTENT — the declared width and height */ 
-  width: 300px; 
-  height: 150px; 
+.band { 
+  width: 100%; 
+  height: 133.33px;  /* 400 / 3 */ 
+} 
   
-  /* PADDING — space INSIDE the border (push content inward) */ 
-  /*padding: 20px;           /* all sides */ 
- /* padding: 10px 20px;      /* top/bottom | left/right */ 
-  padding: 10px 20px 30px 40px;  /* top|right|bottom|left */ 
+.black-band  { 
+  background-color: #000000; 
+  position: relative; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+} 
+.red-band    { background-color: #CE1126; } 
+.green-band  { background-color: #339E35; } 
   
-  /* BORDER — the visible outline */ 
-  border: 2px solid #1E2761; 
-  border-radius: 8px;      /* rounded corners */ 
+.sun-container { 
+  position: relative; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
+  height: 100%; 
+} 
   
-  /* MARGIN — space OUTSIDE the border (push away from neighbours) */ 
-  margin: 1rem auto;       /* top/bottom | left/right auto = centred */ 
-  
-  background-color: #6a7aa5; 
+.sun { 
+  position: relative; 
+  width: 110px; 
+  height: 110px; 
+  border-radius: 50%;
+  background-color: transparent;
 }
+
+.sun::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  background-color: #CE1126;
+  z-index: 2;
+}
+
+.ray {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 100px;
+  background-color: #CE1126;
+  border-radius: 999px;
+  transform-origin: center center;
+  z-index: 1;
+}
+
+.ray-1 { transform: translate(-50%, -50%) rotate(0deg); }
+.ray-2 { transform: translate(-50%, -50%) rotate(22.5deg); }
+.ray-3 { transform: translate(-50%, -50%) rotate(45deg); }
+.ray-4 { transform: translate(-50%, -50%) rotate(67.5deg); }
+.ray-5 { transform: translate(-50%, -50%) rotate(90deg); }
+.ray-6 { transform: translate(-50%, -50%) rotate(112.5deg); }
+.ray-7 { transform: translate(-50%, -50%) rotate(135deg); }
+.ray-8 { transform: translate(-50%, -50%) rotate(157.5deg); }
+.ray-9 { transform: translate(-50%, -50%) rotate(180deg); }
+.ray-10 { transform: translate(-50%, -50%) rotate(202.5deg); }    
+.ray-11 { transform: translate(-50%, -50%) rotate(225deg); }
+.ray-12 { transform: translate(-50%, -50%) rotate(247.5deg); }
+.ray-13 { transform: translate(-50%, -50%) rotate(270deg); }
+.ray-14 { transform: translate(-50%, -50%) rotate(292.5deg); }
+.ray-15 { transform: translate(-50%, -50%) rotate(315deg); }
+.ray-16 { transform: translate(-50%, -50%) rotate(337.5deg); }
