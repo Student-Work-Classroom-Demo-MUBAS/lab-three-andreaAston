@@ -1,7 +1,7 @@
 # Reflection
-Student Name:** Andrea Aston
+**Student Name:** Andrea Aston
 **Student ID:** BECE/21/SS/002
-**Date:** 9th August
+**Date:** 9th August, 2026
 
 7. I used box-sizing: border-box with the * selector because it makes layout sizing much easier to predict. With border-box, the declared width already includes the padding and border, so if an element has width: 200px and padding: 20px on both sides, the actual rendered width stays 200px. Without border-box, the width only applies to the content area, so the total rendered width becomes 200px + 20px + 20px = 240px, which is larger than expected.
 
