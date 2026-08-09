@@ -1,0 +1,17 @@
+
+/*  Task 1 Specificity*/
+/* Specificity: 0-0-1 (one element) */ 
+p { color: black; } 
+  
+/* Specificity: 0-1-0 (one class) */ 
+.intro { color: blue; } 
+  
+/* Specificity: 1-0-0 (one ID) — always beats classes */ 
+#hero { color: red; } 
+  
+/* Specificity: 0-1-1 (one class + one element) */ 
+p.intro { color: green; } 
+p#hero{
+    color:blueviolet;
+}
+  
